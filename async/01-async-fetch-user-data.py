@@ -2,7 +2,7 @@ import asyncio
 import aiohttp
 
 RESOURCE_TODOS_URL = "https://jsonplaceholder.typicode.com/users/{0}/todos"
-RESOURCE_USERS_URLS = 'https://jsonplaceholder.typicode.com/users'
+RESOURCE_USERS_URL = 'https://jsonplaceholder.typicode.com/users'
 RESOURCE_POSTS_URL = "https://jsonplaceholder.typicode.com/users/{0}/posts"
 USER_ID = 1
 
@@ -21,7 +21,7 @@ async def getTODOS(user_id: int) -> any:
             return await response.json()
 
 async def getUsers() -> any:
-    api_url = RESOURCE_USERS_URLS
+    api_url = RESOURCE_USERS_URL
     print(f"Fetching data from {api_url}")
     async with aiohttp.ClientSession() as session:
         async with session.get(api_url) as response:
